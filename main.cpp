@@ -1,19 +1,32 @@
 #include <iostream>
+#include <math.h>
 
 using namespace std;
-void momento_ofensivo(int, int);
+void momento_ofensivo(float, float);
 
 int main()
 {
-    cout<<"ingrese la altura respectiva: "<<endl;
-    cout<<"ingrese la velocidad inicial: "<<endl;
+    float velocidad_inicial = 0,tiempo = 0, angulo = 0;
+
+    cout<<"ingrese la altura respectiva: "<<endl;cin>>tiempo;
+    cout<<"ingrese la velocidad inicial: "<<endl;cin>>velocidad_inicial;
+    cout<<"ingrese el angulo de tiro: "<<endl;cin>>angulo;
+
+
     return 0;
 }
 
-void momento_ofensivo(float altura, float velocidad);
+void momento_ofensivo(float tiempo, float velocidad,float angul)
 {
-    float rango = 0, altura_m = 0,gravitacion = 9,81;
+    float ;
 
-    altura_m = (velocidad*velocidad)/(2*gravitacion);
+
+
+
+
+
+
+
+
 
 }
