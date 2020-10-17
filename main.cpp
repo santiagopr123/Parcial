@@ -4,16 +4,23 @@
 using namespace std;
 void momento_ofensivo(double,double, double,double);
 
+
 int main()
 {
-    double velocidad_inicial = 0,time = 0, angulo = 0,distancia = 0;
 
-    cout<<"ingrese la tiempo respectivo: "<<endl;cin>>time;
-    cout<<"ingrese la velocidad inicial: "<<endl;cin>>velocidad_inicial;
-    cout<<"ingrese el angulo de tiro: "<<endl;cin>>angulo;
-    cout<<"ingrese la distancia con la cual se separan los cañones: "<<endl;cin>>distancia;
+    for(int i = 0; i<3; i++)
+    {
+        double velocidad_inicial = 0,time = 0, angulo = 0,distancia = 0;
+        cout<<"prueba numero: "<<i<<endl;
 
-    momento_ofensivo(time, velocidad_inicial, angulo,distancia);
+        cout<<"\ningrese la tiempo respectivo: "<<endl;cin>>time;
+        cout<<"ingrese la velocidad inicial: "<<endl;cin>>velocidad_inicial;
+        cout<<"ingrese el angulo de tiro: "<<endl;cin>>angulo;
+        cout<<"ingrese la distancia con la cual se separan los cañones: "<<endl;cin>>distancia;
+
+        momento_ofensivo(time, velocidad_inicial, angulo,distancia);
+    }
+
 
 
     return 0;
@@ -23,7 +30,7 @@ void momento_ofensivo(double tiempo, double velocidad,double angul,double distan
 {
     double velocidad_y,pi = 3.1416,gravitacion = 9.81,arreglo[20],velocidad_x = 0;
 
-    double y, x = 0,rango = pi*(0.025*0.025);
+    double y, x = 0;
 
     int contador = 0,tiempo_x = 20;
 
@@ -43,24 +50,13 @@ void momento_ofensivo(double tiempo, double velocidad,double angul,double distan
 
         if(*(arreglo+contador) == y)
         {
-            cout<<"la bomba explotara en el timepo: "<<distancia_ofensivo<<" con una altura de: "<<x-rango;
+            cout<<"la bomba explotara en el timepo: "<<20-distancia_ofensivo<<" con una altura de: "<<x-(pi*(0.025*0.025))<<endl;
+            break;
         }
 
         tiempo_x--;
         distancia_ofensivo--;
         contador++;
     }
-
-
-
-
-
-
-
-
-
-
-
-
 
 }
