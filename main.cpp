@@ -2,29 +2,30 @@
 #include <math.h>
 
 using namespace std;
-void momento_ofensivo(double,double, double);
+void momento_ofensivo(double,double, double,double);
 
 int main()
 {
-    double velocidad_inicial = 0,time = 0, angulo = 0;
+    double velocidad_inicial = 0,time = 0, angulo = 0,distancia = 0;
 
-    cout<<"ingrese la altura respectiva: "<<endl;cin>>time;
+    cout<<"ingrese la tiempo respectivo: "<<endl;cin>>time;
     cout<<"ingrese la velocidad inicial: "<<endl;cin>>velocidad_inicial;
     cout<<"ingrese el angulo de tiro: "<<endl;cin>>angulo;
+    cout<<"ingrese la distancia con la cual se separan los cañones: "<<endl;cin>>distancia;
 
-    momento_ofensivo(time, velocidad_inicial, angulo);
+    momento_ofensivo(time, velocidad_inicial, angulo,distancia);
 
 
     return 0;
 }
 
-void momento_ofensivo(double tiempo, double velocidad,double angul)
+void momento_ofensivo(double tiempo, double velocidad,double angul,double distancia_ofensivo)
 {
     double velocidad_y,pi = 3.1416,gravitacion = 9.81,arreglo[20],velocidad_x = 0;
 
-    double y, x = 0,distancia_ofensivo = tiempo+20;
+    double y, x = 0,rango = pi*(0.025*0.025);
 
-    int contador = 0,tiempo_x = 0;
+    int contador = 0,tiempo_x = 20;
 
     velocidad_y = (velocidad*sin(pi/angul))-gravitacion*tiempo;
 
@@ -34,14 +35,20 @@ void momento_ofensivo(double tiempo, double velocidad,double angul)
 
 
 
-    while(distancia_ofensivo != 4)
+    while(distancia_ofensivo != 0)
     {
         velocidad_x = (velocidad*sin(pi/angul))-gravitacion*tiempo_x;
         x = (velocidad_x*tiempo)-(1/2)*gravitacion*(tiempo_x*tiempo_x);
         arreglo[contador] = x;
 
+        if(*(arreglo+contador) == y)
+        {
+            cout<<"la bomba explotara en el timepo: "<<distancia_ofensivo<<" con una altura de: "<<x-rango;
+        }
 
-
+        tiempo_x--;
+        distancia_ofensivo--;
+        contador++;
     }
 
 
