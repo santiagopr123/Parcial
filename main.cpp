@@ -20,16 +20,29 @@ int main()
 
 void momento_ofensivo(double tiempo, double velocidad,double angul)
 {
-    double velocidad_y,pi = 3.1416,gravitacion = 9.81;
+    double velocidad_y,pi = 3.1416,gravitacion = 9.81,arreglo[20],velocidad_x = 0;
 
-    double y;
+    double y, x = 0,distancia_ofensivo = tiempo+20;
+
+    int contador = 0,tiempo_x = 0;
 
     velocidad_y = (velocidad*sin(pi/angul))-gravitacion*tiempo;
 
     y = (velocidad_y*tiempo)-(1/2)*gravitacion*(tiempo*tiempo);
 
-    cout<<velocidad_y<<endl;
-    cout<<y;
+    cout<<"punto en y donde se encuentra la bomba enemiga: "<<y<<endl;
+
+
+
+    while(distancia_ofensivo != 4)
+    {
+        velocidad_x = (velocidad*sin(pi/angul))-gravitacion*tiempo_x;
+        x = (velocidad_x*tiempo)-(1/2)*gravitacion*(tiempo_x*tiempo_x);
+        arreglo[contador] = x;
+
+
+
+    }
 
 
 
